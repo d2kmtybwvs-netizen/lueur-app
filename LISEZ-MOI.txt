@@ -1,0 +1,84 @@
+LUEUR — VERSION INSTALLABLE (PWA) · version 1.1
+================================================
+
+Ce dossier contient Lueur, à l’identique de la version testée dans Claude
+(design, textes, fonctionnalités et calculs inchangés).
+
+FICHIERS (tous à placer ensemble, au même niveau, sans sous-dossier)
+- index.html ............ la page de l’application
+- app.js ................ le code de l’application
+- manifest.webmanifest .. nom, couleurs et icônes pour l’installation
+- sw.js ................. ouverture hors ligne (ne touche jamais à tes données)
+- apple-touch-icon.png .. icône iPhone 180 × 180
+- icon-192.png .......... icône 192 × 192
+- icon-512.png .......... icône 512 × 512
+- icon-512-maskable.png . icône 512 × 512 avec marge de sécurité (Android)
+(LISEZ-MOI.txt n’a pas besoin d’être mis en ligne, mais ça ne gêne pas.)
+
+
+METTRE EN LIGNE AVEC GITHUB PAGES (gratuit, HTTPS, faisable depuis un iPad)
+---------------------------------------------------------------------------
+1. Dans l’app Fichiers, touche le fichier .zip : il se décompresse en dossier.
+2. Dans Safari, va sur github.com et crée un compte (gratuit).
+3. Touche « + » en haut, puis « New repository ».
+   - Repository name : lueur
+   - Coche « Public » (le compte gratuit l’exige pour GitHub Pages)
+   - Touche « Create repository ».
+4. Sur la page du dépôt, touche « uploading an existing file »
+   (ou « Add file » puis « Upload files »).
+   Touche « choose your files », ouvre le dossier décompressé, sélectionne
+   TOUS les fichiers, puis valide. Attends la fin de l’envoi.
+   En bas, touche « Commit changes ».
+5. Va dans « Settings » (onglet du dépôt), puis « Pages » dans le menu.
+   - Source : « Deploy from a branch »
+   - Branch : « main » et dossier « / (root) »
+   - Touche « Save ».
+6. Attends 1 à 5 minutes et recharge la page « Pages » : l’adresse apparaît,
+   de la forme  https://TON-NOM.github.io/lueur/
+   (Les intitulés de GitHub peuvent légèrement varier.)
+
+
+INSTALLER SUR L’IPHONE
+----------------------
+1. Ouvre l’adresse dans Safari sur l’iPhone.
+2. Touche le bouton Partager (selon ta version d’iOS, il peut se trouver
+   dans le menu « ⋯ »).
+3. Choisis « Sur l’écran d’accueil ». Si l’option « Ouvrir comme app web »
+   apparaît, laisse-la activée. Touche « Ajouter ».
+4. Ouvre Lueur depuis l’écran d’accueil, puis ouvre-la une fois sans réseau
+   pour vérifier qu’elle fonctionne hors ligne.
+
+
+TRANSFÉRER TES DONNÉES DEPUIS LA VERSION CLAUDE
+-----------------------------------------------
+La nouvelle adresse démarre vide : chaque site a son propre stockage.
+1. Dans Lueur sur Claude : Paramètres → « Exporter mes données » → « Copier ».
+2. Dans Lueur installée (depuis l’écran d’accueil, pas depuis Safari) :
+   Paramètres → colle le texte dans « Importer une sauvegarde » → « Importer ».
+Évite de coller ce texte dans une note ou un e-mail : il contient tout ton journal.
+
+
+OÙ SONT TES DONNÉES ET QUELS SONT LES RISQUES
+---------------------------------------------
+- Tout reste sur l’iPhone, dans le stockage local de l’application
+  (localStorage, clé « lueur.v1 »). Le code n’envoie rien à aucun serveur.
+- GitHub n’héberge que le code. Il ne reçoit jamais ton journal ni tes réponses.
+- Pour s’afficher, l’application charge des bibliothèques et des polices
+  (cdnjs, Tailwind, Google Fonts). Ces services voient ton adresse IP comme
+  pour n’importe quel site, mais jamais tes données. Après la première
+  ouverture, ces fichiers sont gardés en copie sur l’iPhone.
+- Lueur ne chiffre pas elle-même les données. iOS protège le contenu de
+  l’appareil quand un code de verrouillage est défini. Toute personne qui
+  utilise ton iPhone déverrouillé peut ouvrir Lueur.
+- Le stockage de l’app installée est séparé de celui de Safari.
+- Supprimer l’icône de l’écran d’accueil peut supprimer les données.
+- Apple peut effacer les données d’un site qui n’a pas été utilisé pendant
+  plusieurs semaines. Ouvrir l’application régulièrement l’évite en général.
+  Fais un export de temps en temps et garde-le dans un endroit sûr.
+
+
+METTRE À JOUR PLUS TARD
+-----------------------
+Remplace les fichiers sur GitHub (« Add file » → « Upload files »).
+L’application récupère la nouvelle version à la prochaine ouverture avec
+réseau (parfois à la deuxième). Tes données ne sont pas effacées par une mise à jour.
